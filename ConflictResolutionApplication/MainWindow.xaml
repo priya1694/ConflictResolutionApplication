@@ -1,0 +1,153 @@
+<Window
+    x:Class="ConflictResolutionApplication.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ConflictResolutionApplication"
+    xmlns:vm="using:ConflictResolutionApplication.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local1="using:ConflictResolutionApplication.Models"
+    mc:Ignorable="d"
+    Title="Trip Conflict List - Trips">
+
+    <Grid x:Name="root">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="White" Margin="2">
+            <Border BorderBrush="Silver" BorderThickness="1" Height="30">
+            <Button Content="Control" Height="30" FontWeight="Bold" Padding="5,5">
+                    <Button.Flyout>
+                        <MenuFlyout>
+                            <MenuFlyoutItem Text="Automatic conflict Resolution Enabled"
+                                         Command="{Binding EnableAutomaticConflictResolutionCommand}"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+            </Border>
+        </Grid>
+
+        <ScrollViewer Grid.Row="1" Margin="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Border BorderBrush="Silver" BorderThickness="2" CornerRadius="5">
+                <StackPanel Background="White" Margin="5">
+                    <!-- Header Section -->
+                    <Grid Background="White" Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="70"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Content="Service ID" Grid.Column="0" FontWeight="Bold" FontSize="10" Padding="10"  
+                                Background="White" BorderThickness="0" Click="HeaderButton_Click" CommandParameter="ServiceID"/>
+                        <Button Content="Trip ID" Grid.Column="1" FontWeight="Bold" FontSize="10" Padding="10" 
+                                Background="White" BorderThickness="0" Click="HeaderButton_Click" CommandParameter="TripID"/>
+                        <Button Content="Direction" Grid.Column="2" FontWeight="Bold" FontSize="10" Padding="10" 
+                                Background="White" BorderThickness="0" Click="HeaderButton_Click" CommandParameter="Direction"/>
+                        <Button Content="Start Time" Grid.Column="3" FontWeight="Bold" FontSize="10" Padding="10" 
+                                Background="White" BorderThickness="0" Click="HeaderButton_Click" CommandParameter="StartTime"/>
+                        <Button Content="Train Type" Grid.Column="4" FontWeight="Bold" FontSize="10" Padding="10" 
+                                Background="White" BorderThickness="0" Click="HeaderButton_Click" CommandParameter="TrainType"/>
+                        <Button Content="Length" Grid.Column="5" FontWeight="Bold" FontSize="10" Padding="10" 
+                                Background="White" BorderThickness="0" Click="HeaderButton_Click" CommandParameter="Length"/>
+                        <Button Content="PostFix" Grid.Column="6" FontWeight="Bold" FontSize="10" Padding="10" 
+                                Background="White" BorderThickness="0" Click="HeaderButton_Click" CommandParameter="Postfix"/>
+                        <Button Content="Start Location" Grid.Column="7" FontWeight="Bold" FontSize="10" Padding="10" 
+                                Background="White" BorderThickness="0" Click="HeaderButton_Click" CommandParameter="StartLocation"/>
+                        <Button Content="End Location" Grid.Column="8" FontWeight="Bold" FontSize="10" Padding="10" 
+                                Background="White" BorderThickness="0" Click="HeaderButton_Click" CommandParameter="EndLocation"/>
+                        <Button Content="# Conflicts" Grid.Column="9" FontWeight="Bold" FontSize="10" Padding="10" 
+                                Background="White" BorderThickness="0" Click="HeaderButton_Click" CommandParameter="Conflicts"/>
+                    </Grid>
+
+                    <ListView ItemsSource="{x:Bind ViewModel.Trips}" Height="400">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border BorderBrush="Silver" BorderThickness="2,2,2,2" Grid.Column="0" Height="40">
+                                        <TextBlock Text="{Binding ServiceID}" Foreground="{Binding TextColor}">
+                                            <ToolTipService.ToolTip>
+                                                <ToolTip>
+                                                    <StackPanel>
+                                                        <TextBlock Text="Service ID:"  />
+                                                        <TextBlock Text="{Binding ServiceID}" />
+                                                        <TextBlock Text="Trip ID: " />
+                                                        <TextBlock Text="{Binding TripID}" />
+                                                    </StackPanel>
+                                                </ToolTip>
+                                            </ToolTipService.ToolTip>
+                                            <TextBlock.ContextFlyout>
+                                                <MenuFlyout>
+                                                    <MenuFlyoutItem Text="Reservation"/>
+                                                    <MenuFlyoutItem Text="Route Plan"/>
+                                                    <MenuFlyoutItem Text="Save Trip"/>
+                                                </MenuFlyout>
+                                            </TextBlock.ContextFlyout>
+                                        </TextBlock>
+                                    </Border>
+
+                                    <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="1" Height="40">
+                                        <TextBlock Text="{Binding TripID}" Foreground="{Binding TextColor}" Padding="3" />
+                                    </Border>
+                                    <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="2" Height="40">
+                                        <TextBlock Text="{Binding Direction}" Foreground="{Binding TextColor}" Padding="3"/>
+                                    </Border>
+                                    <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="3" Height="40">
+                                        <TextBlock Text="{Binding StartTime}" Foreground="{Binding TextColor}" Padding="3"/>
+                                    </Border>
+                                    <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="4" Height="40">
+                                        <TextBlock Text="{Binding TrainType}" Foreground="{Binding TextColor}" Padding="5"/>
+                                    </Border>
+                                    <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="5" Height="40">
+                                        <TextBlock Text="{Binding Length}" Foreground="{Binding TextColor}" Padding="5"/>
+                                    </Border>
+                                    <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="6" Height="40">
+                                        <TextBlock Text="{Binding PostFix}" Foreground="{Binding TextColor}" Padding="5"/>
+                                    </Border>
+                                    <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="7" Height="40">
+                                        <TextBlock Text="{Binding StartLocation}" Foreground="{Binding TextColor}" Padding="5"/>
+                                    </Border>
+                                    <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="8" Height="40">
+                                        <TextBlock Text="{Binding EndLocation}" Foreground="{Binding TextColor}" Padding="5"/>
+                                    </Border>
+                                    <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="9" Height="40">
+                                        <TextBlock Text="{Binding Conflicts}" Foreground="{Binding TextColor}" Padding="5"/>
+                                    </Border>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </Border>
+        </ScrollViewer>
+
+        <Grid Grid.Row="2" Background="White" Height="30" Margin="5">
+            <Border BorderBrush="Silver" BorderThickness="2,2,2,2">
+                <TextBlock Padding="5,5" Foreground="{Binding StatusColor}" Text="{Binding StatusMessage}" FontWeight="Bold"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
