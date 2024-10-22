@@ -19,7 +19,7 @@
 
         <Grid Background="White" Margin="2">
             <Border BorderBrush="Silver" BorderThickness="1" Height="30">
-            <Button Content="Control" Height="30" FontWeight="Bold" Padding="5,5">
+            <Button Content="Control" Height="30" FontWeight="Bold">
                     <Button.Flyout>
                         <MenuFlyout>
                             <MenuFlyoutItem Text="Automatic conflict Resolution Enabled"
@@ -88,7 +88,7 @@
                                     </Grid.ColumnDefinitions>
 
                                     <Border BorderBrush="Silver" BorderThickness="2,2,2,2" Grid.Column="0" Height="40">
-                                        <TextBlock Text="{Binding ServiceID}" Foreground="{Binding TextColor}">
+                                        <TextBlock Text="{Binding ServiceID}" FontSize="12" Foreground="{Binding TextColor}">
                                             <ToolTipService.ToolTip>
                                                 <ToolTip>
                                                     <StackPanel>
@@ -110,31 +110,31 @@
                                     </Border>
 
                                     <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="1" Height="40">
-                                        <TextBlock Text="{Binding TripID}" Foreground="{Binding TextColor}" Padding="3" />
+                                        <TextBlock Text="{Binding TripID}" FontSize="12" Foreground="{Binding TextColor}"  />
                                     </Border>
                                     <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="2" Height="40">
-                                        <TextBlock Text="{Binding Direction}" Foreground="{Binding TextColor}" Padding="3"/>
+                                        <TextBlock Text="{Binding Direction}" FontSize="12" Foreground="{Binding TextColor}"/>
                                     </Border>
                                     <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="3" Height="40">
-                                        <TextBlock Text="{Binding StartTime}" Foreground="{Binding TextColor}" Padding="3"/>
+                                        <TextBlock Text="{Binding StartTime}" FontSize="12" Foreground="{Binding TextColor}"/>
                                     </Border>
                                     <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="4" Height="40">
-                                        <TextBlock Text="{Binding TrainType}" Foreground="{Binding TextColor}" Padding="5"/>
+                                        <TextBlock Text="{Binding TrainType}" FontSize="12" Foreground="{Binding TextColor}"/>
                                     </Border>
                                     <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="5" Height="40">
-                                        <TextBlock Text="{Binding Length}" Foreground="{Binding TextColor}" Padding="5"/>
+                                        <TextBlock Text="{Binding Length}" FontSize="12" Foreground="{Binding TextColor}"/>
                                     </Border>
                                     <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="6" Height="40">
-                                        <TextBlock Text="{Binding PostFix}" Foreground="{Binding TextColor}" Padding="5"/>
+                                        <TextBlock Text="{Binding PostFix}" FontSize="12" Foreground="{Binding TextColor}"/>
                                     </Border>
                                     <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="7" Height="40">
-                                        <TextBlock Text="{Binding StartLocation}" Foreground="{Binding TextColor}" Padding="5"/>
+                                        <TextBlock Text="{Binding StartLocation}" FontSize="12" Foreground="{Binding TextColor}"/>
                                     </Border>
                                     <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="8" Height="40">
-                                        <TextBlock Text="{Binding EndLocation}" Foreground="{Binding TextColor}" Padding="5"/>
+                                        <TextBlock Text="{Binding EndLocation}" FontSize="12" Foreground="{Binding TextColor}"/>
                                     </Border>
                                     <Border BorderBrush="Silver" BorderThickness="0,2,2,2" Grid.Column="9" Height="40">
-                                        <TextBlock Text="{Binding Conflicts}" Foreground="{Binding TextColor}" Padding="5"/>
+                                        <TextBlock Text="{Binding Conflicts}" FontSize="12" Foreground="{Binding TextColor}"/>
                                     </Border>
                                 </Grid>
                             </DataTemplate>
@@ -146,7 +146,7 @@
 
         <Grid Grid.Row="2" Background="White" Height="30" Margin="5">
             <Border BorderBrush="Silver" BorderThickness="2,2,2,2">
-                <TextBlock Padding="5,5" Foreground="{Binding StatusColor}" Text="{Binding StatusMessage}" FontWeight="Bold"/>
+                <TextBlock Foreground="{Binding StatusColor}" Text="{Binding StatusMessage}" FontWeight="Bold"/>
             </Border>
         </Grid>
     </Grid>

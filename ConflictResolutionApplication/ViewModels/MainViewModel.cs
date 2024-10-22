@@ -128,7 +128,7 @@ namespace ConflictResolutionApplication.ViewModels
                 "ServiceID" => trip.ServiceID,
                 "TripID" => trip.TripID,
                 "Direction" => trip.Direction,
-                "StartTime" => DateTime.Parse(trip.StartTime), // Convert to DateTime for correct sorting
+                "StartTime" => DateTime.Parse(trip.StartTime), 
                 "TrainType" => trip.TrainType,
                 "Length" => trip.Length,
                 "Postfix" => trip.PostFix,
