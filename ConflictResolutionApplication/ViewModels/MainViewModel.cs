@@ -94,6 +94,16 @@ namespace ConflictResolutionApplication.ViewModels
                 new Trip { ServiceID = "02", TripID = "0202", Direction = "R", StartTime = "06-28-24 09:48", TrainType = "Freight", Length = 0, PostFix = "None", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 0 },
                 new Trip { ServiceID = "03", TripID = "0301", Direction = "L", StartTime = "06-28-24 12:12", TrainType = "Passenger", Length = 0, PostFix = "None", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 1 },
                 new Trip { ServiceID = "03", TripID = "0302", Direction = "R", StartTime = "06-28-24 12:12", TrainType = "Freight", Length = 0, PostFix = "None", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 1 },
+                new Trip { ServiceID = "03", TripID = "0303", Direction = "L", StartTime = "06-28-24 12:14", TrainType = "Passenger", Length = 0, PostFix = "None", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 2 },
+                new Trip { ServiceID = "03", TripID = "0304", Direction = "R", StartTime = "06-29-24 12:14", TrainType = "Default", Length = 0, PostFix = "None", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 2 },
+                new Trip { ServiceID = "01", TripID = "0101", Direction = "L", StartTime = "06-28-24 06:12", TrainType = "Default", Length = 0, PostFix = "G", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 0 },
+                new Trip { ServiceID = "01", TripID = "0102", Direction = "R", StartTime = "06-28-24 06:12", TrainType = "Freight", Length = 0, PostFix = "None", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 0 },
+                new Trip { ServiceID = "01", TripID = "0103", Direction = "L", StartTime = "06-28-24 06:24", TrainType = "Passenger", Length = 0, PostFix = "None", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 0 },
+                new Trip { ServiceID = "01", TripID = "0104", Direction = "R", StartTime = "06-28-24 06:24", TrainType = "Default", Length = 0, PostFix = "None", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 0 },
+                new Trip { ServiceID = "02", TripID = "0201", Direction = "L", StartTime = "06-28-24 09:48", TrainType = "Passenger", Length = 0, PostFix = "None", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 0 },
+                new Trip { ServiceID = "02", TripID = "0202", Direction = "R", StartTime = "06-28-24 09:48", TrainType = "Freight", Length = 0, PostFix = "None", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 0 },
+                new Trip { ServiceID = "03", TripID = "0301", Direction = "L", StartTime = "06-28-24 12:12", TrainType = "Passenger", Length = 0, PostFix = "None", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 1 },
+                new Trip { ServiceID = "03", TripID = "0302", Direction = "R", StartTime = "06-28-24 12:12", TrainType = "Freight", Length = 0, PostFix = "None", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 1 },
                 new Trip { ServiceID = "03", TripID = "0303", Direction = "L", StartTime = "06-28-24 12:14", TrainType = "Passenger", Length = 0, PostFix = "None", StartLocation = "PVO1_DAR", EndLocation = "P1C_SKU", Conflicts = 2 }
             };
         }
